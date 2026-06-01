@@ -20,7 +20,7 @@ export default function WeightCalculator() {
     const t = density.threshold;
     if (weight <= t) return { key: "confort", label: "Zone de confort", color: "var(--eucalyptus)" };
     if (weight <= t * 1.4)
-      return { key: "vigilance", label: "Vigilance", color: "var(--rose-deep)" };
+      return { key: "vigilance", label: "Vigilance", color: "var(--argile-deep)" };
     return { key: "risque", label: "Risque — alopécie de traction", color: "var(--violet-soft)" };
   }, [weight, density]);
 
@@ -89,7 +89,7 @@ export default function WeightCalculator() {
               value={weight}
               onChange={(e) => setWeight(parseFloat(e.target.value))}
               style={{
-                background: `linear-gradient(90deg, var(--rose) ${pct}%, rgba(243,239,233,0.18) ${pct}%)`,
+                background: `linear-gradient(90deg, var(--argile) ${pct}%, rgba(243,239,233,0.18) ${pct}%)`,
               }}
             />
             <div className="weight__scale">

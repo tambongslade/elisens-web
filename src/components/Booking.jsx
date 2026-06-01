@@ -76,7 +76,7 @@ export default function Booking() {
                 <label htmlFor="msg">Un mot sur vos cheveux (optionnel)</label>
                 <textarea id="msg" name="msg" rows="3" placeholder="Type, sensibilités, attentes…" />
               </div>
-              <button type="submit" className="btn btn--rose btn--block">
+              <button type="submit" className="btn btn--argile btn--block">
                 Demander mon rendez-vous
               </button>
               <p className="booking__legal">

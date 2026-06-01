@@ -57,8 +57,7 @@
   --violet-soft: #8a7290;
   --argile: #d8d0c8;
   --argile-light: #e7e1da;
-  --rose: #c6a9a3;
-  --rose-deep: #b08e87;
+  --argile-deep: #a89b8a;
 
   /* Semantic */
   --ink: var(--petrole);
@@ -118,7 +117,7 @@ button {
 }
 
 ::selection {
-  background: var(--rose);
+  background: var(--argile);
   color: var(--petrole-deep);
 }
 
