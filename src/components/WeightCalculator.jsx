@@ -89,7 +89,7 @@ export default function WeightCalculator() {
               value={weight}
               onChange={(e) => setWeight(parseFloat(e.target.value))}
               style={{
-                background: `linear-gradient(90deg, var(--argile) ${pct}%, rgba(243,239,233,0.18) ${pct}%)`,
+                background: `linear-gradient(90deg, var(--violet) ${pct}%, rgba(243,239,233,0.18) ${pct}%)`,
               }}
             />
             <div className="weight__scale">

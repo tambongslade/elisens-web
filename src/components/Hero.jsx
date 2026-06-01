@@ -103,7 +103,7 @@ export default function Hero() {
           initial="hidden"
           animate="show"
         >
-          <a href="#booking" className="btn btn--argile">
+          <a href="#booking" className="btn btn--violet">
             Réserver un soin
           </a>
           <a href="#weight" className="btn btn--ghost">

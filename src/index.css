@@ -117,8 +117,8 @@ button {
 }
 
 ::selection {
-  background: var(--argile);
-  color: var(--petrole-deep);
+  background: var(--violet);
+  color: var(--paper);
 }
 
 /* Display type */
