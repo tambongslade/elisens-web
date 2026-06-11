@@ -1,10 +1,13 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 import { ParallaxImage, MotifDrift } from "./Parallax";
-import { IMAGES } from "../data";
+import { IMAGES, SLOTS, SLOT_MINUTES } from "../data";
 
 export default function Booking() {
   const [sent, setSent] = useState(false);
+  const [slot, setSlot] = useState("");
+
+  const chosen = SLOTS.find((s) => s.id === slot);
 
   return (
     <section className="booking" id="booking">
@@ -43,7 +46,11 @@ export default function Booking() {
           {sent ? (
             <Reveal className="booking__thanks">
               <p>Merci. 🌿</p>
-              <p>Votre demande est notée — nous vous recontactons très vite pour confirmer.</p>
+              <p>
+                Votre rendez-vous de {SLOT_MINUTES} min est noté pour le créneau{" "}
+                <strong>{chosen ? `${chosen.start} — ${chosen.end}` : ""}</strong>. Nous vous
+                recontactons très vite pour confirmer.
+              </p>
             </Reveal>
           ) : (
             <Reveal delay={0.1} as="form" className="booking__form"
@@ -73,11 +80,31 @@ export default function Booking() {
                 </div>
               </div>
               <div className="field">
+                <span className="booking__slots-label">
+                  Choisir un créneau · {SLOT_MINUTES} min
+                </span>
+                <div className="booking__slots" role="radiogroup" aria-label="Créneaux disponibles">
+                  {SLOTS.map((s) => (
+                    <button
+                      type="button"
+                      key={s.id}
+                      role="radio"
+                      aria-checked={slot === s.id}
+                      className={`slot-chip ${slot === s.id ? "is-active" : ""}`}
+                      onClick={() => setSlot(s.id)}
+                    >
+                      <span className="slot-chip__time">{s.start} — {s.end}</span>
+                      <span className="slot-chip__dur">{SLOT_MINUTES} min</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="field">
                 <label htmlFor="msg">Un mot sur vos cheveux (optionnel)</label>
                 <textarea id="msg" name="msg" rows="3" placeholder="Type, sensibilités, attentes…" />
               </div>
-              <button type="submit" className="btn btn--violet btn--block">
-                Demander mon rendez-vous
+              <button type="submit" className="btn btn--violet btn--block" disabled={!slot}>
+                Book an appointment
               </button>
               <p className="booking__legal">
                 En envoyant ce formulaire, vous acceptez d'être recontacté·e par ELI'Sens.

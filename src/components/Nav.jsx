@@ -26,7 +26,7 @@ export default function Nav() {
             </a>
           ))}
           <a href="#booking" className="nav__cta" onClick={() => setOpen(false)}>
-            Prendre rendez-vous
+            Book an appointment
           </a>
         </nav>
 

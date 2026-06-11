@@ -256,6 +256,7 @@
 
 /* ---------- Section shells ---------- */
 .manifesto,
+.homme,
 .ritual,
 .services,
 .weight,
@@ -268,6 +269,10 @@
 /* alternating section grounds */
 .manifesto {
   background: var(--paper);
+  color: var(--petrole);
+}
+.homme {
+  background: var(--argile);
   color: var(--petrole);
 }
 .ritual {
@@ -342,6 +347,47 @@
   font-size: clamp(1.3rem, 2.2vw, 1.8rem);
   color: var(--petrole);
   line-height: 1.25;
+}
+
+/* ---------- Homme ---------- */
+.homme__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+.homme__title {
+  font-size: clamp(2rem, 4.2vw, 3.6rem);
+  margin: 1rem 0 1.5rem;
+  max-width: 16ch;
+}
+.homme__title em {
+  font-style: italic;
+  color: var(--violet);
+}
+.homme__lead {
+  max-width: 46ch;
+  color: #4b5860;
+}
+.homme__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.7rem, 1.4vw, 1.1rem);
+}
+.homme__cell .px-frame,
+.homme__cell img,
+.homme__cell .smart-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px -45px rgba(47, 62, 70, 0.55);
+}
+.homme__cell--feature {
+  grid-column: 1 / -1;
+}
+.homme__cell--feature .px-frame {
+  aspect-ratio: 16 / 10;
 }
 
 /* ---------- Ritual ---------- */
@@ -781,6 +827,55 @@ input[type="range"]::-moz-range-thumb {
 .field select option {
   color: #1c272c;
 }
+.booking__slots-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(243, 239, 233, 0.65);
+}
+.booking__slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+}
+.slot-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.85em 0.6em;
+  border-radius: 10px;
+  border: 1px solid rgba(243, 239, 233, 0.2);
+  background: rgba(243, 239, 233, 0.05);
+  color: var(--paper);
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease-soft);
+}
+.slot-chip:hover {
+  border-color: var(--violet);
+  transform: translateY(-2px);
+}
+.slot-chip.is-active {
+  border-color: var(--violet);
+  background: color-mix(in srgb, var(--violet) 22%, transparent);
+}
+.slot-chip__time {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.slot-chip__dur {
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(243, 239, 233, 0.6);
+}
+.btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn[disabled]:hover {
+  transform: none;
+}
 .booking__legal {
   font-size: 0.78rem;
   color: rgba(243, 239, 233, 0.5);
@@ -966,6 +1061,7 @@ input[type="range"]::-moz-range-thumb {
   }
 
   .manifesto__grid,
+  .homme__grid,
   .ritual__values,
   .boutique__grid,
   .booking__grid,
@@ -995,6 +1091,9 @@ input[type="range"]::-moz-range-thumb {
     grid-template-columns: 1fr;
   }
   .field--row {
+    grid-template-columns: 1fr;
+  }
+  .booking__slots {
     grid-template-columns: 1fr;
   }
   .booking__info {

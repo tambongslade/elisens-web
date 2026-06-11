@@ -1,6 +1,7 @@
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Manifesto from "./components/Manifesto";
+import Homme from "./components/Homme";
 import Ritual from "./components/Ritual";
 import Services from "./components/Services";
 import WeightCalculator from "./components/WeightCalculator";
@@ -17,6 +18,7 @@ export default function App() {
       <main>
         <Hero />
         <Manifesto />
+        <Homme />
         <Ritual />
         <Services />
         <WeightCalculator />

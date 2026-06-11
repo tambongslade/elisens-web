@@ -24,12 +24,44 @@ export const IMAGES = {
   serviceTresses: u("1535588706069-af8f2d837332", 1000), // twists / protective style
   serviceDiagnostic: diagnosticImg, // real diagnostic capillaire photo
   serviceEnfant: espaceEnfantImg, // real espace enfant photo
+  serviceHomme: u("1567894340315-735d7c361db0", 1000), // soin homme & barbe (Black man, barbershop)
   boutique: u("1707162740897-cf2f057d2a41", 1200), // elegant, light ground
   bookingPortrait: reservationImg, // real reservation photo
+
+  // ELI'Sens · Homme — men's grooming gallery (Unsplash placeholders, Black men)
+  homme: u("1686671805337-7d8aa64b965f", 1200), // barber clipping — le soin homme
+  homme2: u("1567894340315-735d7c361db0", 1000), // barber at work, focus
+  homme3: u("1648389824823-483ec5ca228a", 900), // profil, barbe nette
+  homme4: u("1612214070475-1e73f478188c", 900), // profil, barbe sculptée
+  homme5: u("1605980776566-0486c3ac7617", 900), // portrait studio premium
 };
+
+// ELI'Sens · Homme — copy + gallery
+export const HOMME = {
+  eyebrow: "ELI'Sens · Homme",
+  title: "Le soin n'a pas de genre.",
+  lead:
+    "Barbe, cheveux crépus, cuir chevelu : nos rituels s'adressent aussi à eux. Coupe maîtrisée, tracé net, soin de la barbe — le même geste précis et bienveillant, pensé pour l'homme.",
+  gallery: [
+    { key: "homme", alt: "Soin et coupe homme chez ELI'Sens", feature: true },
+    { key: "homme2", alt: "Coiffeur au travail — soin homme" },
+    { key: "homme3", alt: "Barbe nette, tracé précis" },
+    { key: "homme4", alt: "Profil, barbe sculptée" },
+    { key: "homme5", alt: "Portrait — un client ELI'Sens" },
+  ],
+};
+
+// Booking demo — 3 appointment slots, 90 minutes each
+export const SLOT_MINUTES = 90;
+export const SLOTS = [
+  { id: "morning", start: "09:00", end: "10:30" },
+  { id: "midday", start: "11:00", end: "12:30" },
+  { id: "afternoon", start: "14:00", end: "15:30" },
+];
 
 export const NAV = [
   { label: "La maison", href: "#manifesto" },
+  { label: "Homme", href: "#homme" },
   { label: "Le rituel", href: "#ritual" },
   { label: "Nos soins", href: "#services" },
   { label: "Le poids des mèches", href: "#weight" },
@@ -86,6 +118,12 @@ export const SERVICES = [
     desc: "Un premier rapport au soin tout en douceur. Des gestes adaptés aux cheveux fragiles des plus jeunes.",
     tag: "Famille",
     img: "serviceEnfant",
+  },
+  {
+    title: "Soin homme & barbe",
+    desc: "Coupe maîtrisée, tracé net et soin de la barbe. Le même rituel attentif, pensé pour le cheveu et la peau de l'homme.",
+    tag: "Homme",
+    img: "serviceHomme",
   },
 ];
 
